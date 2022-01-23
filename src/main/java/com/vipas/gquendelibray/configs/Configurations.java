@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
+@EnableAutoConfiguration(
+        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Configurations extends WebSecurityConfigurerAdapter {
 
 
