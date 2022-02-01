@@ -1,6 +1,8 @@
 package com.vipas.gquendelibray.configs;
 
 import com.vipas.gquendelibray.repository.BookRepository;
+import com.vipas.gquendelibray.repository.UserRepository;
+import com.vipas.gquendelibray.services.SSUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -28,6 +30,15 @@ public class Configurations extends WebSecurityConfigurerAdapter {
 //    @Autowired
 //    EntityManagerFactory entityManagerFactory;
 
+    @Autowired
+    private SSUserDetailsService userDetailsService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+
+
+
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
 
@@ -50,9 +61,11 @@ public class Configurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-auth.inMemoryAuthentication().withUser("user").password(passwordEncoder().encode("1234"))
-        .authorities("ADMIN").and().withUser("admin")
-        .password(passwordEncoder().encode("admin")).authorities("USER");
+//auth.inMemoryAuthentication().withUser("user").password(passwordEncoder().encode("1234"))
+//        .authorities("ADMIN").and().withUser("admin")
+//        .password(passwordEncoder().encode("admin")).authorities("USER");
+
+auth.userDetailsService(new SSUserDetailsService(userRepository)).passwordEncoder(passwordEncoder());
 
     }
 

@@ -86,4 +86,12 @@ public class User {
         this.enabled = enabled;
         this.password = password;
     }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
 }
