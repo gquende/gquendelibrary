@@ -1,5 +1,7 @@
 package com.vipas.gquendelibray.configs;
 
+import com.vipas.gquendelibray.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
@@ -12,6 +14,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import javax.persistence.EntityManagerFactory;
+
 
 @Configuration
 @EnableWebSecurity
@@ -19,15 +23,16 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
         exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Configurations extends WebSecurityConfigurerAdapter {
 
+//    BookRepository bookRepository;
 
+//    @Autowired
+//    EntityManagerFactory entityManagerFactory;
 
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
 
         return new BCryptPasswordEncoder();
     }
-
-
 
 
     @Override

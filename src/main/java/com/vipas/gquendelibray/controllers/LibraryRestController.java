@@ -1,7 +1,7 @@
 package com.vipas.gquendelibray.controllers;
 
 
-import com.vipas.gquendelibray.model.Book;
+import com.vipas.gquendelibray.models.Book;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

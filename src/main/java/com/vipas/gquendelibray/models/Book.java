@@ -1,7 +1,5 @@
-package com.vipas.gquendelibray.model;
+package com.vipas.gquendelibray.models;
 
-
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import javax.persistence.*;
 
@@ -19,7 +17,10 @@ public class Book {
     public int year;
     public String edition;
 
-    public Book(){}
+    public Book(){
+
+
+    }
 
     public Book(String title, String authors, String publish, int year, String edition) {
         this.title = title;
@@ -68,4 +69,6 @@ public class Book {
     public void setEdition(String edition) {
         this.edition = edition;
     }
+
+
 }
