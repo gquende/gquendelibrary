@@ -21,8 +21,8 @@ import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableWebSecurity
-@EnableAutoConfiguration(
-        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+//@EnableAutoConfiguration(
+//        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Configurations extends WebSecurityConfigurerAdapter {
 
 //    BookRepository bookRepository;
@@ -30,32 +30,37 @@ public class Configurations extends WebSecurityConfigurerAdapter {
 //    @Autowired
 //    EntityManagerFactory entityManagerFactory;
 
-    @Autowired
-    private SSUserDetailsService userDetailsService;
+//    @Autowired
+//    private SSUserDetailsService userDetailsService;
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private BookRepository bookRepository;
 
 
 
 
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
-
         return new BCryptPasswordEncoder();
     }
 
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
 //        super.configure(http);
 //        http.authorizeRequests()
-        http.authorizeRequests()
-                .antMatchers("/").access("hasAnyAuthority('USERS','ADMIN')")
-                .antMatchers("/admin").access("hasAnyAuthority('ADMIN')")
-                .anyRequest().authenticated().and().formLogin().loginPage("/login")
-                .permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/home").permitAll();
+//        http.authorizeRequests()
+//                .antMatchers("/").access("hasAnyAuthority('USERS','ADMIN')")
+//                .antMatchers("/admin").access("hasAnyAuthority('ADMIN')")
+//                .anyRequest().authenticated().and().formLogin().loginPage("/login")
+//                .permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//                .logoutSuccessUrl("/home").permitAll();
+
+        http.authorizeRequests().anyRequest().permitAll();
     }
 
     @Override
@@ -65,7 +70,7 @@ public class Configurations extends WebSecurityConfigurerAdapter {
 //        .authorities("ADMIN").and().withUser("admin")
 //        .password(passwordEncoder().encode("admin")).authorities("USER");
 
-auth.userDetailsService(new SSUserDetailsService(userRepository)).passwordEncoder(passwordEncoder());
+//auth.userDetailsService(new SSUserDetailsService(userRepository)).passwordEncoder(passwordEncoder());
 
     }
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All books</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<div class="container">
+
+  <ul>
+
+    <li th:each="book : ${books}">
+       <span th:text="${book.title}"></span>
+    </li>
+
+
+
+  </ul>
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

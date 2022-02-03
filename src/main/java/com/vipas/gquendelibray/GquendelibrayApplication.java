@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@ComponentScan({"com.vipas.gquendelibray"})
 //@EntityScan("com.vipas.gquendelibray.models")
 //@EnableJpaRepositories("com.vipas.gquendelibray.repository")
-@SpringBootApplication(scanBasePackages = {"com.vipas"})
+@SpringBootApplication
 public class GquendelibrayApplication {
 
     public static void main(String[] args) {

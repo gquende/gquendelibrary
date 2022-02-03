@@ -11,10 +11,17 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
+
+    @Column(nullable = false)
     public String title;
+
+
     public String authors;
+
+    @Column(nullable = false)
     public String publish;
     public int year;
+    @Column(nullable = false)
     public String edition;
 
     public Book(){
