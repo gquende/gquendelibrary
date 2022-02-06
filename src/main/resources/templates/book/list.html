@@ -30,24 +30,19 @@
                 </thead>
                 <tbody>
                 <tr th:each="book : ${books}">
-<!--                    <th class="col-1" th:text="${book.id}">ID</th>-->
-                    <td class="col-4" th:text="${book.title}">Title</td>
-                    <td class="col-4" th:text="${book.publish}">Publish</td>
-                    <td class="col-4" th:text="${book.edition}">Edition</td>
-                    <td class="col-4" th:text="${book.authors}">Authors</td>
-                    <td class="col-4" th:text="${book.year}">Year</td>
-
-
-
+<!--                <th class="col-1" th:text="${book.id}">ID</th>-->
+                    <td class="col-2" th:text="${book.title}">Title</td>
+                    <td class="col-2" th:text="${book.publish}">Publish</td>
+                    <td class="col-2" th:text="${book.edition}">Edition</td>
+                    <td class="col-2" th:text="${book.authors}">Authors</td>
+                    <td class="col-2" th:text="${book.year}">Year</td>
                 </tr>
-
-
 
                 </tbody>
 
 
-
             </table>
+            <a href="/books/new">  <button type="button" class="btn btn-primary"> New</button></a>
 
 
         </div>

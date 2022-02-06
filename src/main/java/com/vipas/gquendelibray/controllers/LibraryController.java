@@ -39,7 +39,7 @@ public String index(){
     }
 
 
-    @GetMapping("/books/add")
+    @GetMapping("/books/new")
     public String addBook(Model model){
     model.addAttribute("book", new Book());
     return "register_book";
@@ -50,7 +50,7 @@ public String index(){
         if (result.hasErrors())
             return "register_book";
         bookRepository.save(book);
-        return "redirect:/";
+        return "redirect:/books";
     }
 
     @PostMapping("/process")
@@ -64,12 +64,10 @@ public String index(){
 
     @GetMapping("/books")
     public ModelAndView listBooks(){
-
     ModelAndView mv= new ModelAndView("book/list");
         List<Book> books= bookRepository.findAll();
         mv.addObject("books",books);
         return  mv;
-
     }
 
 
