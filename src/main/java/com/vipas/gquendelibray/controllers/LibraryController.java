@@ -53,13 +53,13 @@ public String index(){
         return "redirect:/books";
     }
 
-    @PostMapping("/process")
-    public String saveBookProcess(Book book, BindingResult result){
-        if (result.hasErrors())
-            return "register_book";
-        bookRepository.save(book);
-        return "redirect:/books";
-    }
+//    @PostMapping("/process")
+//    public String saveBookProcess(Book book, BindingResult result){
+//        if (result.hasErrors())
+//            return "register_book";
+//        bookRepository.save(book);
+//        return "redirect:/books";
+//    }
 
 
     @GetMapping("/books")
