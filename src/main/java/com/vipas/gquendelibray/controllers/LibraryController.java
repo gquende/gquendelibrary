@@ -58,7 +58,7 @@ public String index(){
         if (result.hasErrors())
             return "register_book";
         bookRepository.save(book);
-        return "redirect:/";
+        return "redirect:/books";
     }
 
 
