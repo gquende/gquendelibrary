@@ -21,8 +21,8 @@ import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableWebSecurity
-//@EnableAutoConfiguration(
-//        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@EnableAutoConfiguration(
+        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Configurations extends WebSecurityConfigurerAdapter {
 
 //    BookRepository bookRepository;
