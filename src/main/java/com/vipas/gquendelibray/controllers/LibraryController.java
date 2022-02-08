@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.EntityManagerFactory;
@@ -53,21 +54,20 @@ public String index(){
         return "redirect:/books";
     }
 
-//    @PostMapping("/process")
-//    public String saveBookProcess(Book book, BindingResult result){
-//        if (result.hasErrors())
-//            return "register_book";
-//        bookRepository.save(book);
-//        return "redirect:/books";
-//    }
-
-
     @GetMapping("/books")
     public ModelAndView listBooks(){
     ModelAndView mv= new ModelAndView("book/list");
         List<Book> books= bookRepository.findAll();
         mv.addObject("books",books);
         return  mv;
+    }
+
+    @GetMapping("/books/author")
+    public void getAuthorBooks(@RequestParam(value="authorname") String authorname){
+
+    
+
+
     }
 
 
