@@ -1,9 +1,10 @@
 package com.vipas.gquendelibray.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@Entity
+@Table(name = "greetings")
 public class Greeting {
 
 
@@ -14,6 +15,10 @@ public class Greeting {
 
     public Greeting(String content) {
         this.content = content;
+    }
+
+    public Greeting() {
+
     }
 
     public long getId() {
