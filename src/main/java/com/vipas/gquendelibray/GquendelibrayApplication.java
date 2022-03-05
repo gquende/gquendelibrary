@@ -8,10 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
-@ComponentScan({"com.vipas.gquendelibray"})
-//@EntityScan("com.vipas.gquendelibray.models")
-//@EnableJpaRepositories("com.vipas.gquendelibray.repository")
+
+@EntityScan("com.vipas.gquendelibray.models")
+@EnableJpaRepositories("com.vipas.gquendelibray.repository")
 @SpringBootApplication
+@ComponentScan({"com.vipas.gquendelibray"})
+
 public class GquendelibrayApplication {
 
     public static void main(String[] args) {
