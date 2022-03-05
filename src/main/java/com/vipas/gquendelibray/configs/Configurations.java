@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -21,6 +22,7 @@ import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableWebSecurity
+@EnableConfigurationProperties({FileStorageProperties.class})
 //@EnableAutoConfiguration(
 //        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Configurations extends WebSecurityConfigurerAdapter {
