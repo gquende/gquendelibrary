@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "my_readings")
-public class MyReading {
+public class MyReading{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
