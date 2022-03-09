@@ -1,6 +1,6 @@
-package com.vipas.gquendelibray.repository;
+package com.vipas.gquendelibray.repository.library_repository;
 
-import com.vipas.gquendelibray.models.User;
+import com.vipas.gquendelibray.models.library_models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

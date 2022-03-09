@@ -1,4 +1,4 @@
-package com.vipas.gquendelibray.services;
+package com.vipas.gquendelibray.services.library_services;
 
 
 import com.vipas.gquendelibray.configs.FileStorageProperties;

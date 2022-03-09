@@ -1,10 +1,9 @@
-package com.vipas.gquendelibray.controllers;
+package com.vipas.gquendelibray.controllers.library_controllers;
 
 
-import com.vipas.gquendelibray.models.Book;
-import com.vipas.gquendelibray.models.UploadFileResponse;
-import com.vipas.gquendelibray.services.FileStorageService;
-import com.vipas.gquendelibray.services.LibraryService;
+import com.vipas.gquendelibray.models.library_models.UploadFileResponse;
+import com.vipas.gquendelibray.services.library_services.FileStorageService;
+import com.vipas.gquendelibray.services.library_services.LibraryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

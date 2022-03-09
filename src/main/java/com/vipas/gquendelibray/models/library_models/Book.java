@@ -1,4 +1,4 @@
-package com.vipas.gquendelibray.models;
+package com.vipas.gquendelibray.models.library_models;
 
 
 import javax.persistence.*;

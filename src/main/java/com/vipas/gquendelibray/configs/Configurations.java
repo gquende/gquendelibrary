@@ -1,12 +1,8 @@
 package com.vipas.gquendelibray.configs;
 
-import com.vipas.gquendelibray.repository.BookRepository;
-import com.vipas.gquendelibray.repository.UserRepository;
-import com.vipas.gquendelibray.services.SSUserDetailsService;
+import com.vipas.gquendelibray.repository.library_repository.BookRepository;
+import com.vipas.gquendelibray.repository.library_repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,9 +11,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import javax.persistence.EntityManagerFactory;
 
 
 @Configuration

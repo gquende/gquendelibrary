@@ -1,8 +1,7 @@
-package com.vipas.gquendelibray.repository;
+package com.vipas.gquendelibray.repository.library_repository;
 
-import com.vipas.gquendelibray.models.Book;
+import com.vipas.gquendelibray.models.library_models.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

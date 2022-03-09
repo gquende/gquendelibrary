@@ -1,9 +1,9 @@
-package com.vipas.gquendelibray.services;
+package com.vipas.gquendelibray.services.library_services;
 
 
-import com.vipas.gquendelibray.models.Role;
-import com.vipas.gquendelibray.models.User;
-import com.vipas.gquendelibray.repository.UserRepository;
+import com.vipas.gquendelibray.models.library_models.Role;
+import com.vipas.gquendelibray.models.library_models.User;
+import com.vipas.gquendelibray.repository.library_repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

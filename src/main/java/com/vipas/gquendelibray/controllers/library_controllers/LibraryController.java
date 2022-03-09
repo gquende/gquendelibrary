@@ -1,10 +1,9 @@
-package com.vipas.gquendelibray.controllers;
+package com.vipas.gquendelibray.controllers.library_controllers;
 
 
-import com.vipas.gquendelibray.models.Book;
-import com.vipas.gquendelibray.repository.BookRepository;
+import com.vipas.gquendelibray.models.library_models.Book;
+import com.vipas.gquendelibray.repository.library_repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
 @Controller
