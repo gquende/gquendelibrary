@@ -62,7 +62,9 @@ public class Configurations extends WebSecurityConfigurerAdapter {
 //                .permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 //                .logoutSuccessUrl("/home").permitAll();
 
+        http.cors().and().csrf().disable();
         http.authorizeRequests().anyRequest().permitAll();
+
     }
 
     @Override

@@ -20,19 +20,18 @@ import java.util.List;
 @Controller
 public class LibraryController {
 
-
     @Autowired
     BookRepository bookRepository;
 
-@RequestMapping({"/","/home"})
-public String index(){
-    return "home";
-}
+    @RequestMapping({"/","/home"})
+    public String index(){
+        return "home";
+    }
 
-@RequestMapping("/login")
-    public String login(){
-    return "login";
-}
+    @RequestMapping("/login")
+        public String login(){
+        return "login";
+    }
 
     @RequestMapping("/admin")
     public String admin(){
@@ -63,9 +62,8 @@ public String index(){
     }
 
     @GetMapping("/books/author")
-    public void getAuthorBooks(@RequestParam(value="authorname") String authorname){
-
-    
+    public void getAuthorBooks(@RequestParam(value="authorname") String authorname)
+    {
 
 
     }
