@@ -2,6 +2,7 @@ package com.vipas.gquendelibray.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "my_readings")
@@ -22,6 +23,10 @@ public class MyReading{
     private String bookCover;
     private int pagesOrChapterRead;
     private String previewToEnd;
+
+
+    @OneToMany(mappedBy = "myReading")
+    private List<MyReadingAnnotation> annotations;
 
 
     public MyReading(){}

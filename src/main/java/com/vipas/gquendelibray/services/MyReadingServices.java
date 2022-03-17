@@ -8,15 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MyReadingServices {
-
     @Autowired
     MyReadingRepository myReadingRepository;
-
     public void save(MyReading myReading){
         myReadingRepository.save(myReading);
     }
-
-
 
 
 }
