@@ -1,7 +1,6 @@
 package com.vipas.gquendelibray.configs;
 
-import com.vipas.gquendelibray.repository.library_repository.BookRepository;
-import com.vipas.gquendelibray.repository.library_repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -15,27 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-@EnableConfigurationProperties({FileStorageProperties.class})
-//@EnableAutoConfiguration(
-//        exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Configurations extends WebSecurityConfigurerAdapter {
-
-//    BookRepository bookRepository;
-
-//    @Autowired
-//    EntityManagerFactory entityManagerFactory;
-
-//    @Autowired
-//    private SSUserDetailsService userDetailsService;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private BookRepository bookRepository;
-
-
-
 
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
@@ -45,16 +24,6 @@ public class Configurations extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-//        super.configure(http);
-//        http.authorizeRequests()
-//        http.authorizeRequests()
-//                .antMatchers("/").access("hasAnyAuthority('USERS','ADMIN')")
-//                .antMatchers("/admin").access("hasAnyAuthority('ADMIN')")
-//                .anyRequest().authenticated().and().formLogin().loginPage("/login")
-//                .permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//                .logoutSuccessUrl("/home").permitAll();
-
         http.cors().and().csrf().disable();
         http.authorizeRequests().anyRequest().permitAll();
 
@@ -62,13 +31,6 @@ public class Configurations extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-//auth.inMemoryAuthentication().withUser("user").password(passwordEncoder().encode("1234"))
-//        .authorities("ADMIN").and().withUser("admin")
-//        .password(passwordEncoder().encode("admin")).authorities("USER");
-
-//auth.userDetailsService(new SSUserDetailsService(userRepository)).passwordEncoder(passwordEncoder());
-
     }
 
 
