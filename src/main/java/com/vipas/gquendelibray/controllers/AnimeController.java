@@ -23,7 +23,6 @@ public class AnimeController {
 
     private DateUtil dateUtil;
 
-
     @GetMapping("/list")
     public List<Anime> list(){
         List<Anime> animeList= new ArrayList<>();
