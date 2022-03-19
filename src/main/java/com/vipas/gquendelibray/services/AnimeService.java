@@ -28,7 +28,8 @@ public class AnimeService {
     }
 
     public Anime findById(long id){
-        return animeRepository.findById(id).orElseThrow(()->new BadRequestException("Anime not Found"));
+//        throw new BadRequestException("Erro");
+       return animeRepository.findById(id).orElseThrow(()->new BadRequestException("Anime not Found"));
     }
 
     @Transactional // Serve para levar em consideracao as excessoes ou seja a operacao na base de dados nao vai concluir sem o metodo ter concluid porem isso nao funciona para excessoes Checked, para essas excessoes use: @Transaccional(rollbackFor=Exception.class)

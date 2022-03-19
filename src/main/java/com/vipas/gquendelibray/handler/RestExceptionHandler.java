@@ -16,12 +16,17 @@ import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class RestExceptionHandler {
+
+
     @ExceptionHandler(BadRequestException.class) /*Informa aos controladores toda vez que houver uma excessao */
     public ResponseEntity<BadRequestExceptionDetails> handlerBadException(BadRequestException badRequestException){
-
-        return new ResponseEntity<>(BadRequestExceptionDetails.builder().timestamp(LocalDateTime.now()).status(HttpStatus.BAD_REQUEST.value()).title("Bad Request Exception, Check the Documentation").details(badRequestException.getMessage()).developerMessage(badRequestException.getClass().getName()).build(),HttpStatus.BAD_REQUEST);
-
-
+        return new ResponseEntity<>(BadRequestExceptionDetails.builder()
+                .timestamp(LocalDateTime.now())
+                .status(HttpStatus.BAD_REQUEST.value())
+                .title("Bad Request Exception, Check the Documentation")
+                .details(badRequestException.getMessage())
+                .developerMessage(badRequestException.getClass().getName())
+                .build(),HttpStatus.BAD_REQUEST);
     }
 
 
