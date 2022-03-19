@@ -100,7 +100,11 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 </project>
+
+<!--Dependencias que devem ser inserida-->
+
+<!--<dependency>-->
+<!--<groupId>org.springframework.boot</groupId>-->
+<!--<artifactId>spring-boot-starter-validation</artifactId>-->
+<!--</dependency>-->

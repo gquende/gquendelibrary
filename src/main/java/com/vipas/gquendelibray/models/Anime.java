@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Entity
 @Data
 //@NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 @Builder //Serve para fazer construcao de um objecto dessa classe
 public class Anime {
 
