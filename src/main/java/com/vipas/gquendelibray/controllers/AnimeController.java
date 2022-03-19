@@ -2,13 +2,15 @@ package com.vipas.gquendelibray.controllers;
 
 
 import com.vipas.gquendelibray.models.Anime;
+import com.vipas.gquendelibray.request.AnimePostRequestBody;
+import com.vipas.gquendelibray.services.AnimeService;
 import com.vipas.gquendelibray.util.DateUtil;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ import java.util.List;
 public class AnimeController {
 
     private DateUtil dateUtil;
+    private AnimeService animeService;
 
     @GetMapping("/list")
     public List<Anime> list(){
@@ -32,6 +35,19 @@ public class AnimeController {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
         return animeList;
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Anime> findById(@PathVariable long id)
+    {
+        return new ResponseEntity(animeService.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping()
+    public ResponseEntity findById(@RequestBody AnimePostRequestBody animePostRequestBody){
+        animeService.save(animePostRequestBody);
+        return new ResponseEntity("Saved", HttpStatus.OK);
+    }
+
 
 
 
